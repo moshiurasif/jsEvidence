@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Number</title>
+  </head>
+  <body>
+    <!-- <input type="text" placeholder="Enter a number" id="inputNumber" />
+    <button id="prime-btn">Get Prime</button> -->
+    <h2 id="show-prime"></h2>
+
+    <!-- script here -->
+    <script>
+      //   document.getElementById("prime-btn").addEventListener("click", () => {
+      // let inputNum = document.getElementById("inputNumber").value;
+
+      let inputNum = prompt("Enter a number");
+      let showPrime = document.getElementById("show-prime");
+      let number = Number(inputNum);
+      let isPrime = true;
+      if (number == 1) {
+        showPrime.innerHTML = "1 is neither prime nor a composite number";
+      } else if (number > 1) {
+        for (let i = 2; i < number; i++) {
+          if (number % i == 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime) {
+          showPrime.innerHTML = `${number} is a prime number`;
+        } else {
+          showPrime.innerHTML = `${number} is not a prime number`;
+        }
+      } else {
+        showPrime.innerHTML = "The number is not a prime number";
+      }
+
+      //   });
+    </script>
+  </body>
+</html>
